@@ -1,0 +1,20 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="Enemy">
+			<method name="OnDeath"/>
+			<method name="OnDeath"/>
+			<method name="OnHit"/>
+			<method name="OnHit"/>
+		</type>
+		<type fullname="Player">
+			<method name="OnDeath"/>
+			<method name="OnFire"/>
+			<method name="OnMove"/>
+		</type>
+		<type fullname="Projectile">
+			<method name="OnHit"/>
+			<method name="OnHit"/>
+			<method name="OnHit"/>
+		</type>
+	</assembly>
+</linker>
