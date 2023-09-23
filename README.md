@@ -36,7 +36,7 @@ You'll engage in combat with two different kinds of aerial foes:
 -   Fire Left: J
 -   Fire Right: L
 
-## You Additions
+## Your Additions
 
 -   All art done by me in a pixellated style
     -   Adherence to the pixel grid: Objects will stay aligned to the grid of pixels without blurring
@@ -46,13 +46,11 @@ You'll engage in combat with two different kinds of aerial foes:
     -   Physics bounding boxes are used to determine when the (originally also planned for making objects solid, but this never made it into the game)
 -   Projectile Stealing: If you get an enemy's projectile to hits the direct center of your plane, you grab it instead of letting it deal damage. The next time you fire a projectile, you'll launch that stolen projectile instead of a normal arrow.
 -   Seamless Scrolling Background with Parallax: The background moves slightly up and down with your plane, and speeds up or slows down its scrolling depending on what direction you're moving left and right.
--   Weighted Randomized Enemy Encounters: You're twice as likely to see a charging jet than a spear plane! They also appear in random places on the screen at random times.
+-   Weighted Randomized Enemy Encounters: You're twice as likely to see a charging jet than a spear plane. They also appear in random places on the screen at random times.
 -   The Player cannot move offscreen.
 
 ## Sources
 
-_List all project sources here—models, textures, sound clips, assets, etc._
-_If an asset is from the Unity store, include a link to the page and the author’s name_
 -   All art assets were drawn by me in GIMP.
 -   Fonts:
     -   Manual Display from DaFont (100% Free) https://www.dafont.com/manualdisplay.font
@@ -60,7 +58,6 @@ _If an asset is from the Unity store, include a link to the page and the author�
 
 ## Known Issues
 
-_List any errors, lack of error checking, or specific information that I need to know to run your program_
 -   When played in WebGL, the UI displays incorrectly, especially when viewed in fullscreen.
 -   When viewed in fullscreen, the background parallax also stops being seamless.
 -   Enemies are supposed to glide smoothly to a halt when reaching their spot on the left side of the screen, but instead stop suddenly.
@@ -70,5 +67,4 @@ _List any errors, lack of error checking, or specific information that I need to
 
 ### Requirements not completed
 
-_If you did not complete a project requirement, notate that here_
 - Not sure if this is the section to write this or not, but I'm submitting this using my two-day Grace Period as outlined in the course syllabus.
