@@ -1,6 +1,5 @@
-# Project Arrow Ace
-
-[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
+# Arrow Ace
+Current repository for Arrow Ace, which started as a project for my IGME202 Interactive Media Development course.
 
 ### Student Info
 
