@@ -6,7 +6,7 @@
     <title>Unity WebGL Player | Arrow Ace</title>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" width=480 height=360 style="width: 80vw; height: auto; background: #231F20"></canvas>
+    <canvas id="unity-canvas" width=480 height=360 style="width: auto; height: 50vw; background: #231F20"></canvas>
     <script src="Build/docs.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -25,8 +25,8 @@
         companyName: "turtlehat",
         productName: "Arrow Ace",
         productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
   </body>
