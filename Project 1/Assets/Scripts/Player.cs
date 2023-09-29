@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     // SCENE COMPONENTS
     // The object in the scene that allows objects to track their own collisions
     private CollisionManager collisionManager;
+    private GameSessionManager gameSessionManager;
     public Slider userInterfaceHealthbar;
 
     // GAMEOBJECT COMPONENTS
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
     // If this number is positive, the player will not register any damage
     private float invincibilityTimer = 0f;
     [Tooltip("How long in seconds after firing an arrow the player must wait until firing again")]
-    public float fireRecoveryLength = 0.8f;
+    public float fireRecoveryLength = 0.4f;
     // If this number is positive the player will not fire when the fire button is pressed
     private float fireRecoveryTimer = 0f;
     [Tooltip("The weapons the Player can use")]
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
         // Find necessary components in scene
         // Method of finding components in a scene found here: https://answers.unity.com/questions/15801/finding-cameras.html
         collisionManager = GameObject.FindGameObjectWithTag("CollisionManager").GetComponent<CollisionManager>();
+        gameSessionManager = GameObject.FindGameObjectWithTag("GameSessionManager").GetComponent<GameSessionManager>();
 
         // Find necessary components in own object
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -182,6 +184,10 @@ public class Player : MonoBehaviour
     {
         // Removes from collider sets
         collisionManager.RemoveFromColliderSets(collisionHandler);
+
+        // Stop game session
+        gameSessionManager.gameSessionRunning = false;
+
         Destroy(gameObject);
     }
 }

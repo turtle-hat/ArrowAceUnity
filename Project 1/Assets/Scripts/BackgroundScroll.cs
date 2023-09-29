@@ -26,7 +26,6 @@ public class BackgroundScroll : MonoBehaviour
     {
         // Find the camera in the scene
         sceneCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -74,5 +73,10 @@ public class BackgroundScroll : MonoBehaviour
                 transform.position.z
             );
 
+    }
+
+    public void NewGame(Player player)
+    {
+        this.player = player;
     }
 }

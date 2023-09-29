@@ -25,4 +25,9 @@ public class Scoreboard : MonoBehaviour
     {
         text.text = $"{score.ToString("0000000")}";
     }
+
+    public void NewGame()
+    {
+        score = 0;
+    }
 }

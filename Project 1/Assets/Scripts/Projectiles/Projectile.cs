@@ -11,6 +11,7 @@ public enum ProjectileType
 public class Projectile : MonoBehaviour
 {
     // SCENE COMPONENTS
+    private GameSessionManager gameSessionManager;
     private CollisionManager collisionManager;
 
     // GAMEOBJECT COMPONENTS
@@ -25,7 +26,9 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         // Get collision manager from scene
+        gameSessionManager = GameObject.FindGameObjectWithTag("GameSessionManager").GetComponent<GameSessionManager>();
         collisionManager = GameObject.FindGameObjectWithTag("CollisionManager").GetComponent<CollisionManager>();
+
 
         // Get own relevant components
         movement = gameObject.GetComponent<Movement>();
@@ -60,6 +63,13 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If the game isn't running anymore, delete any projectiles
+        if (!gameSessionManager.gameSessionRunning)
+        {
+            collisionManager.RemoveFromColliderSets(collisionHandler);
+            Destroy(gameObject);
+        }
+
         movement.Move(direction);
 
         // If any Physics Box is too far offscreen, destroy this projectile

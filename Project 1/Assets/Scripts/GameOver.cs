@@ -9,7 +9,6 @@ public class GameOver : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         rectTransform = gameObject.GetComponent<RectTransform>();
         //rectTransform.position = new Vector3(240, 540, 0);
         transform.position = new Vector3(0, 360, 0);
@@ -37,5 +36,10 @@ public class GameOver : MonoBehaviour
                 transform.position = new Vector3(0, 0, 0);
             }
         }
+    }
+
+    public void NewGame(Player player)
+    {
+        this.player = player;
     }
 }

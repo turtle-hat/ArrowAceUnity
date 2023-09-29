@@ -18,7 +18,9 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     // SCENE COMPONENTS
+    protected GameSessionManager gameSessionManager;
     protected CollisionManager collisionManager;
+    protected EnemiesManager enemiesManager;
     protected Scoreboard scoreboard;
     protected Player player;
 
@@ -43,7 +45,9 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         // Find collision manager and player in scene
+        gameSessionManager = GameObject.FindGameObjectWithTag("GameSessionManager").GetComponent<GameSessionManager>();
         collisionManager = GameObject.FindGameObjectWithTag("CollisionManager").GetComponent<CollisionManager>();
+        enemiesManager = GameObject.FindGameObjectWithTag("EnemiesManager").GetComponent<EnemiesManager>();
         scoreboard = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<Scoreboard>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
@@ -81,6 +85,14 @@ public class Enemy : MonoBehaviour
     public void OnDeath()
     {
         scoreboard.Score += (int)(pointsOnKill * totalMultiplier);
+        collisionManager.RemoveFromColliderSets(collisionHandler);
+        enemiesManager.EnemyDied(this);
+
+        Destroy(gameObject);
+    }
+
+    public void NewGame()
+    {
         collisionManager.RemoveFromColliderSets(collisionHandler);
         Destroy(gameObject);
     }
