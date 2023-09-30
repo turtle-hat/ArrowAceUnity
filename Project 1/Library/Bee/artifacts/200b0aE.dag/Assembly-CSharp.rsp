@@ -387,11 +387,13 @@
 "Assets/Scripts/Enemies/EnemyMelee.cs"
 "Assets/Scripts/Enemies/EnemySpear.cs"
 "Assets/Scripts/GameOver.cs"
+"Assets/Scripts/GameSessionManager.cs"
 "Assets/Scripts/Health.cs"
 "Assets/Scripts/Movement.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/Projectiles/Projectile.cs"
 "Assets/Scripts/Scoreboard.cs"
+"Assets/Scripts/TitleScreen.cs"
 -langversion:9.0
 
 /deterministic

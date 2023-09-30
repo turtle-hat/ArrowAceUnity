@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb46fb5cd6f14a50a7c4cd4ebca4be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesManager: {fileID: 0}
+  enemiesManager: {fileID: 780378700}
   playerObject: {fileID: 2071223329616255359, guid: 6d5aa7af3daf649c796fe1c77d743a5b, type: 3}
   player: {fileID: 0}
   gameSessionRunning: 0
@@ -243,7 +243,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f122c7e0-1f67-4f39-a215-37e33162677e
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -251,7 +263,19 @@ MonoBehaviour:
     m_ActionId: 18de5bbe-323c-4fce-858e-6177786ffa81
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 8c352302-2ad7-42f3-a6a1-721d1b516b72
     m_ActionName: Player/Fire[/Keyboard/space]
   - m_PersistentCalls:
@@ -272,11 +296,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 0c881f27-e535-48f9-92b9-1c05bdaec2b3
-    m_ActionName: UI/Start[/Keyboard/r]
+    m_ActionId: 7969a129-d36b-469a-97fe-1fefb6cce91c
+    m_ActionName: Player/Start[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: UI
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &519420028

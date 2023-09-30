@@ -8,6 +8,10 @@ public class GameSessionManager : MonoBehaviour
     public EnemiesManager enemiesManager;
 
     public GameObject playerObject;
+
+    // Reference to own input component
+    private PlayerInput playerInput;
+
     // Public reference to the current player
     [HideInInspector]
     public Player player;
@@ -21,6 +25,7 @@ public class GameSessionManager : MonoBehaviour
     {
         gameStarted = false;
         gameSessionRunning = false;
+        playerInput = gameObject.GetComponent<PlayerInput>();
         enemiesManager = GameObject.FindGameObjectWithTag("EnemiesManager").GetComponent<EnemiesManager>();
     }
 
@@ -53,6 +58,8 @@ public class GameSessionManager : MonoBehaviour
 
         // Get a reference to the player and start the game session
         player = newPlayer.GetComponent<Player>();
+
+
         gameSessionRunning = true;
     }
 }

@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "7969a129-d36b-469a-97fe-1fefb6cce91c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -317,27 +326,10 @@
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "0d734daf-053d-48fe-8e5d-8034f258c5e9",
-            "actions": [
-                {
-                    "name": "Start",
-                    "type": "Button",
-                    "id": "0c881f27-e535-48f9-92b9-1c05bdaec2b3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "b0277c57-bdf4-46a9-bd9c-f5cd98e47327",
+                    "id": "e501f65d-75b8-4e3f-95fc-dfcfa52e9e9b",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
@@ -347,6 +339,12 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "0d734daf-053d-48fe-8e5d-8034f258c5e9",
+            "actions": [],
+            "bindings": []
         }
     ],
     "controlSchemes": [
