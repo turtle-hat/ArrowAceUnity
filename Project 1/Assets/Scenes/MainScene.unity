@@ -177,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224408189}
   - component: {fileID: 224408191}
-  - component: {fileID: 224408190}
+  - component: {fileID: 224408192}
   m_Layer: 0
   m_Name: GameSessionManager
   m_TagString: GameSessionManager
@@ -200,7 +200,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &224408190
+--- !u!114 &224408191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224408187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb46fb5cd6f14a50a7c4cd4ebca4be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesManager: {fileID: 0}
+  playerObject: {fileID: 2071223329616255359, guid: 6d5aa7af3daf649c796fe1c77d743a5b, type: 3}
+  player: {fileID: 0}
+  gameSessionRunning: 0
+  gameStarted: 0
+--- !u!114 &224408192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,46 +259,6 @@ MonoBehaviour:
     m_ActionId: 4f2e31cd-f12b-46c4-a035-22eb0675c157
     m_ActionName: Player/Shoot[/Keyboard/i,/Keyboard/k,/Keyboard/space,/Keyboard/l]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 027efc80-bc25-47aa-8566-e801851c304b
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 817ba11e-a087-4475-aea9-4cc611e3777c
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f0ada990-df9b-4fbf-bc87-5a8d672a7de4
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a8e69ac3-145a-4352-aedd-c5bf437703e2
-    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: dae54afc-20ff-45cd-8340-dee8e5fe0097
-    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bf931dc5-8692-4802-9f8f-52020c254c45
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4a9e3e62-18d2-464a-a659-5e4114dc4d7d
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c0c15c5d-6016-429d-9786-abc620cabb9d
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8b5b1fc2-1cf1-4153-808c-f06eacb73e24
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3de2f3e9-78e1-4a2b-91fa-cc089c7731ee
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 224408191}
         m_TargetAssemblyTypeName: GameSessionManager, Assembly-CSharp
@@ -301,24 +278,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 519420031}
---- !u!114 &224408191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224408187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb46fb5cd6f14a50a7c4cd4ebca4be4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemiesManager: {fileID: 0}
-  playerObject: {fileID: 2071223329616255359, guid: 6d5aa7af3daf649c796fe1c77d743a5b, type: 3}
-  player: {fileID: 0}
-  gameSessionRunning: 0
-  gameStarted: 0
+  m_Camera: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
