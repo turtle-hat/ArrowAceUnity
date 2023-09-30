@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-    private Player player;
+    private GameSessionManager gameSessionManager;
     private RectTransform rectTransform;
 
     private void Awake()
     {
+        gameSessionManager = GameObject.FindGameObjectWithTag("GameSessionManager").GetComponent<GameSessionManager>();
         rectTransform = gameObject.GetComponent<RectTransform>();
         //rectTransform.position = new Vector3(240, 540, 0);
         transform.position = new Vector3(0, 360, 0);
@@ -17,7 +18,7 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player == null)
+        if (gameSessionManager.gameStarted && !gameSessionManager.gameSessionRunning)
         {
             //if (rectTransform.position.y > 180)
             //{
@@ -36,10 +37,9 @@ public class GameOver : MonoBehaviour
                 transform.position = new Vector3(0, 0, 0);
             }
         }
-    }
-
-    public void NewGame(Player player)
-    {
-        this.player = player;
+        else
+        {
+            transform.position = new Vector3(0, 360, 0);
+        }
     }
 }

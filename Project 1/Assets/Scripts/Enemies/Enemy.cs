@@ -93,7 +93,6 @@ public class Enemy : MonoBehaviour
 
     public void NewGame()
     {
-        Debug.Log("Enemy says okay new game time");
         collisionManager.RemoveFromColliderSets(collisionHandler);
         Destroy(gameObject);
     }

@@ -14,9 +14,12 @@ public class GameSessionManager : MonoBehaviour
 
     [HideInInspector]
     public bool gameSessionRunning;
+    [HideInInspector]
+    public bool gameStarted;
 
     private void Awake()
     {
+        gameStarted = false;
         gameSessionRunning = false;
         enemiesManager = GameObject.FindGameObjectWithTag("EnemiesManager").GetComponent<EnemiesManager>();
     }
@@ -30,6 +33,8 @@ public class GameSessionManager : MonoBehaviour
     // Runs when the user starts a game
     public void OnGameStart(InputAction.CallbackContext startContext)
     {
+        gameStarted = true;
+
         if (gameSessionRunning == true)
         {
             player.OnDeath();

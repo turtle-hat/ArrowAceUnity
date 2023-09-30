@@ -314,9 +314,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb46fb5cd6f14a50a7c4cd4ebca4be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesManager: {fileID: 0}
   playerObject: {fileID: 2071223329616255359, guid: 6d5aa7af3daf649c796fe1c77d743a5b, type: 3}
   player: {fileID: 0}
   gameSessionRunning: 0
+  gameStarted: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1151,7 @@ GameObject:
   - component: {fileID: 2017135623}
   - component: {fileID: 2017135626}
   - component: {fileID: 2017135625}
+  - component: {fileID: 2017135627}
   m_Layer: 5
   m_Name: TitlePanel
   m_TagString: Untagged
@@ -1215,6 +1218,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017135622}
   m_CullTransparentMesh: 1
+--- !u!114 &2017135627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017135622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33e165eb9a844bd2a28dc3281acc093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2037675261
 GameObject:
   m_ObjectHideFlags: 0

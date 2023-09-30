@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - EnemyMelee
     - EnemySpear
     - GameOver
+    - GameSessionManager
     - Health
     - Hitbox
     - Hurtbox
@@ -16,10 +17,12 @@ ScriptsOnlyBuild:
     - Player
     - Projectile
     - Scoreboard
+    - TitleScreen
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
@@ -82,14 +85,14 @@ ScriptsOnlyBuild:
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: Player
-    methodName: OnDeath
-  - assembly: Assembly-CSharp
-    fullTypeName: Player
     methodName: OnMove
   - assembly: Assembly-CSharp
     fullTypeName: Player
     methodName: OnFire
   - assembly: Assembly-CSharp
+    fullTypeName: Player
+    methodName: OnDeath
+  - assembly: Assembly-CSharp
     fullTypeName: Enemy
     methodName: OnDeath
   - assembly: Assembly-CSharp
@@ -110,6 +113,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Projectile
     methodName: OnHit
+  - assembly: Assembly-CSharp
+    fullTypeName: GameSessionManager
+    methodName: OnGameStart
   sceneClasses:
     Assets/Scenes/MainScene.unity:
     - Class: 1
@@ -133,45 +139,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 3212}
+      Script: {instanceID: 3184}
     - Class: 114
-      Script: {instanceID: 3532}
+      Script: {instanceID: 3214}
     - Class: 114
-      Script: {instanceID: 3992}
+      Script: {instanceID: 3534}
     - Class: 114
-      Script: {instanceID: 4108}
+      Script: {instanceID: 3994}
     - Class: 114
-      Script: {instanceID: 4276}
+      Script: {instanceID: 4110}
     - Class: 114
-      Script: {instanceID: 4448}
+      Script: {instanceID: 4278}
     - Class: 114
-      Script: {instanceID: 4536}
+      Script: {instanceID: 4450}
     - Class: 114
-      Script: {instanceID: 5244}
+      Script: {instanceID: 4538}
     - Class: 114
-      Script: {instanceID: 5334}
+      Script: {instanceID: 5246}
     - Class: 114
-      Script: {instanceID: 5924}
+      Script: {instanceID: 5336}
     - Class: 114
-      Script: {instanceID: 5974}
+      Script: {instanceID: 5926}
     - Class: 114
-      Script: {instanceID: 6054}
+      Script: {instanceID: 5976}
     - Class: 114
-      Script: {instanceID: 6244}
+      Script: {instanceID: 6056}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6246}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 6730}
     - Class: 114
-      Script: {instanceID: 8092}
+      Script: {instanceID: 7150}
     - Class: 114
-      Script: {instanceID: 8442}
+      Script: {instanceID: 8094}
     - Class: 114
-      Script: {instanceID: 8632}
+      Script: {instanceID: 8444}
     - Class: 114
-      Script: {instanceID: 9664}
+      Script: {instanceID: 8634}
     - Class: 114
-      Script: {instanceID: 10060}
+      Script: {instanceID: 9666}
+    - Class: 114
+      Script: {instanceID: 10062}
+    - Class: 114
+      Script: {instanceID: 10384}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -392,6 +402,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TitleScreen
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
     className: TestRunCallbackListener
@@ -595,7 +611,7 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 267b0d18b7445435a728e462b93c5ac1
+      Hash: c0ef2fa05bcca78053452ee40601077f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -829,7 +845,7 @@ ScriptsOnlyBuild:
     className: RemoteInputPlayerConnection
   - hash:
       serializedVersion: 2
-      Hash: 88fa599b8c7e119b93b7ae89f5ff8986
+      Hash: 71c42e25ee341ff2522f6a650f461181
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemiesManager
@@ -1385,6 +1401,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 251106b3eb407b4e81b22f6d90bee090
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSessionManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
