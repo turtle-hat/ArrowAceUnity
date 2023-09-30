@@ -57,21 +57,6 @@ public class EnemiesManager : MonoBehaviour
         // If there is a game running,
         if (gameSessionManager.gameSessionRunning)
         {
-            // If no reference to player, that means this is a new game
-            if (player = null)
-            {
-                // Get player from game session manager
-                player = gameSessionManager.player;
-
-                // Delete any current enemies
-                for (int i = 0; i < enemies.Count; i++)
-                {
-                    Enemy enemy = enemies[i];
-                    enemies.Remove(enemy);
-                    enemy.NewGame();
-                }
-            }
-
             // If enemy timer is up,
             if (enemyTimer <= 0)
             {
@@ -117,5 +102,19 @@ public class EnemiesManager : MonoBehaviour
         maxEnemies += maxEnemiesChange;
 
         enemies.Remove(enemy);
+    }
+
+    public void NewGame()
+    {
+        // Get player from game session manager
+        player = gameSessionManager.player;
+
+        // Delete any current enemies
+        for (int i = enemies.Count - 1; i >= 0; i--)
+        {
+            Enemy enemy = enemies[i];
+            enemies.Remove(enemy);
+            enemy.NewGame();
+        }
     }
 }

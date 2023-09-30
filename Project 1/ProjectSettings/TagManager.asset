@@ -8,6 +8,7 @@ TagManager:
   - EnemiesManager
   - Scoreboard
   - GameSessionManager
+  - Healthbar
   layers:
   - Default
   - TransparentFX

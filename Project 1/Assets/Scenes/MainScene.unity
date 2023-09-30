@@ -283,8 +283,8 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 224408191}
+        m_TargetAssemblyTypeName: GameSessionManager, Assembly-CSharp
         m_MethodName: OnGameStart
         m_Mode: 0
         m_Arguments:
@@ -299,9 +299,9 @@ MonoBehaviour:
     m_ActionName: UI/Start[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
 --- !u!114 &224408191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 543560900}
   m_Layer: 5
   m_Name: Healthbar
-  m_TagString: Untagged
+  m_TagString: Healthbar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -537,13 +537,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPause: 2
   timerVariation: 1.2
-  enemies:
-  - {fileID: 2294819309352907407, guid: f274c8afafe85453eb634e2198e65477, type: 3}
-  - {fileID: 957347307598839981, guid: cfec114a25cf84db598df5bf4087ca2f, type: 3}
+  enemies: []
   maxEnemiesInitial: 1
   maxEnemiesChangeInitial: 1.1
   maxEnemiesChangeSquared: -0.1
-  enemyTypes: []
+  enemyTypes:
+  - {fileID: 2294819309352907407, guid: f274c8afafe85453eb634e2198e65477, type: 3}
+  - {fileID: 957347307598839981, guid: cfec114a25cf84db598df5bf4087ca2f, type: 3}
   enemyWeights: 0200000001000000
 --- !u!1 &1029526934
 GameObject:

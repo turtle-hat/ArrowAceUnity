@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     // The object in the scene that allows objects to track their own collisions
     private CollisionManager collisionManager;
     private GameSessionManager gameSessionManager;
-    public Slider userInterfaceHealthbar;
+    private Slider userInterfaceHealthbar;
 
     // GAMEOBJECT COMPONENTS
     // The component for
@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
         // Method of finding components in a scene found here: https://answers.unity.com/questions/15801/finding-cameras.html
         collisionManager = GameObject.FindGameObjectWithTag("CollisionManager").GetComponent<CollisionManager>();
         gameSessionManager = GameObject.FindGameObjectWithTag("GameSessionManager").GetComponent<GameSessionManager>();
+        userInterfaceHealthbar = GameObject.FindGameObjectWithTag("Healthbar").GetComponent<Slider>();
 
         // Find necessary components in own object
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
