@@ -192,47 +192,49 @@ extern void Movement__ctor_mCB72C1AD57256D73959D74FB86C5D0AA69EAE7ED (void);
 extern void Player_Awake_m512A28E1559EB8AEEB2E1DB873F9F99FCC96BA67 (void);
 // 0x0000005A System.Void Player::Start()
 extern void Player_Start_mC31CF4F40DDEA35C5E39E8C43EC37284AE7C453D (void);
-// 0x0000005B System.Void Player::Update()
+// 0x0000005B System.Void Player::NewGame()
+extern void Player_NewGame_m45226B45980F15EC765338F408A0E98DB2F8979A (void);
+// 0x0000005C System.Void Player::Update()
 extern void Player_Update_m95E134A5EF1B5164EA281F61D7FA436F59BE3C9F (void);
-// 0x0000005C System.Void Player::OnMove(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000005D System.Void Player::OnMove(UnityEngine.InputSystem.InputAction/CallbackContext)
 extern void Player_OnMove_mE50058889D2207EB71D24C266ED5802138FDE364 (void);
-// 0x0000005D System.Void Player::OnFire(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000005E System.Void Player::OnFire(UnityEngine.InputSystem.InputAction/CallbackContext)
 extern void Player_OnFire_mBB33DA174D1AB9BA66510A9940731381F566AC08 (void);
-// 0x0000005E System.Void Player::OnDeath()
+// 0x0000005F System.Void Player::OnDeath()
 extern void Player_OnDeath_m15955E455BC645123930D6F39BB2E89877FF8C9D (void);
-// 0x0000005F System.Void Player::.ctor()
+// 0x00000060 System.Void Player::.ctor()
 extern void Player__ctor_m0A83E0706592FC871B0CF188B37AFC6649F3D85D (void);
-// 0x00000060 System.Void Projectile::Awake()
+// 0x00000061 System.Void Projectile::Awake()
 extern void Projectile_Awake_m12ADD9C3E81141584C8879C9ECB35F6C89E9FEB2 (void);
-// 0x00000061 System.Void Projectile::SetMotion(UnityEngine.Vector3,UnityEngine.Vector2,System.Single,System.Single)
+// 0x00000062 System.Void Projectile::SetMotion(UnityEngine.Vector3,UnityEngine.Vector2,System.Single,System.Single)
 extern void Projectile_SetMotion_m0A9C11DF8EF9A8560BA3F3A4511CE659661EA2C7 (void);
-// 0x00000062 System.Void Projectile::Start()
+// 0x00000063 System.Void Projectile::Start()
 extern void Projectile_Start_mDA0F36DCD80DFB09774528622CEC598CA5B718F5 (void);
-// 0x00000063 System.Void Projectile::Update()
+// 0x00000064 System.Void Projectile::Update()
 extern void Projectile_Update_m6E056CDE2DC25EDBA5DA3F4D9B9B9A69EC656737 (void);
-// 0x00000064 System.Void Projectile::OnHit()
+// 0x00000065 System.Void Projectile::OnHit()
 extern void Projectile_OnHit_m60D5A5D64E0C8BF6CCD021C0BF074632D50734CE (void);
-// 0x00000065 System.Void Projectile::.ctor()
+// 0x00000066 System.Void Projectile::.ctor()
 extern void Projectile__ctor_m9CB69FCF9C97712F4578D9686861E9694A270A58 (void);
-// 0x00000066 System.Int32 Scoreboard::get_Score()
+// 0x00000067 System.Int32 Scoreboard::get_Score()
 extern void Scoreboard_get_Score_m8B99FCBE164276E6251C362840C82C3034E8069A (void);
-// 0x00000067 System.Void Scoreboard::set_Score(System.Int32)
+// 0x00000068 System.Void Scoreboard::set_Score(System.Int32)
 extern void Scoreboard_set_Score_mCCC7717D1A64D9F3BF7617522D5409D053AF7B55 (void);
-// 0x00000068 System.Void Scoreboard::Awake()
+// 0x00000069 System.Void Scoreboard::Awake()
 extern void Scoreboard_Awake_m4322291BB20053B9691A0B1EB9F62A941AC996B1 (void);
-// 0x00000069 System.Void Scoreboard::Update()
+// 0x0000006A System.Void Scoreboard::Update()
 extern void Scoreboard_Update_m5C523E40C81BD7CA41C3685758F12D4FB101CCED (void);
-// 0x0000006A System.Void Scoreboard::NewGame()
+// 0x0000006B System.Void Scoreboard::NewGame()
 extern void Scoreboard_NewGame_mF40106414A96DE7710D64F46DEC58B1FE00E809A (void);
-// 0x0000006B System.Void Scoreboard::.ctor()
+// 0x0000006C System.Void Scoreboard::.ctor()
 extern void Scoreboard__ctor_mAE681D93BC792530E6AB1FEB147EBD109D425030 (void);
-// 0x0000006C System.Void TitleScreen::Awake()
+// 0x0000006D System.Void TitleScreen::Awake()
 extern void TitleScreen_Awake_m92821DF30225449A76585A205A7B49808D3B6F9D (void);
-// 0x0000006D System.Void TitleScreen::Update()
+// 0x0000006E System.Void TitleScreen::Update()
 extern void TitleScreen_Update_m2AD6E32C3FC870AC34A93FFC6E69B4B1AD20D63C (void);
-// 0x0000006E System.Void TitleScreen::.ctor()
+// 0x0000006F System.Void TitleScreen::.ctor()
 extern void TitleScreen__ctor_mFF0E57C57ABC86C80B1265C83B901C55689A5086 (void);
-static Il2CppMethodPointer s_methodPointers[110] = 
+static Il2CppMethodPointer s_methodPointers[111] = 
 {
 	BackgroundScroll_Awake_m5F89B423D0662875638D9B85DA6BECF8D3D71C79,
 	BackgroundScroll_Start_m4DF5966582F1467AEA45728999DDA49865963222,
@@ -324,6 +326,7 @@ static Il2CppMethodPointer s_methodPointers[110] =
 	Movement__ctor_mCB72C1AD57256D73959D74FB86C5D0AA69EAE7ED,
 	Player_Awake_m512A28E1559EB8AEEB2E1DB873F9F99FCC96BA67,
 	Player_Start_mC31CF4F40DDEA35C5E39E8C43EC37284AE7C453D,
+	Player_NewGame_m45226B45980F15EC765338F408A0E98DB2F8979A,
 	Player_Update_m95E134A5EF1B5164EA281F61D7FA436F59BE3C9F,
 	Player_OnMove_mE50058889D2207EB71D24C266ED5802138FDE364,
 	Player_OnFire_mBB33DA174D1AB9BA66510A9940731381F566AC08,
@@ -345,7 +348,7 @@ static Il2CppMethodPointer s_methodPointers[110] =
 	TitleScreen_Update_m2AD6E32C3FC870AC34A93FFC6E69B4B1AD20D63C,
 	TitleScreen__ctor_mFF0E57C57ABC86C80B1265C83B901C55689A5086,
 };
-static const int32_t s_InvokerIndices[110] = 
+static const int32_t s_InvokerIndices[111] = 
 {
 	4160,
 	4160,
@@ -438,6 +441,7 @@ static const int32_t s_InvokerIndices[110] =
 	4160,
 	4160,
 	4160,
+	4160,
 	3415,
 	3415,
 	4160,
@@ -462,7 +466,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	110,
+	111,
 	s_methodPointers,
 	0,
 	NULL,

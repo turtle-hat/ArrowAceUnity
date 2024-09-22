@@ -2422,6 +2422,8 @@ struct Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C;
 struct Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74;
 // UnityEngine.Networking.PlayerConnection.PlayerEditorConnectionEvents
 struct PlayerEditorConnectionEvents_tF92F4A9A0EDAB7D3D544AE9B0F3F925C4E48B7CB;
+// UnityEngine.InputSystem.PlayerInput
+struct PlayerInput_t5155B6508FE1937D9B2380CBA545FABE36A6F81F;
 // UnityEngine.UIElements.PointerDispatchState
 struct PointerDispatchState_t145BB8BB02690F87487325596E690295E39A383A;
 // UnityEngine.EventSystems.PointerEventData
@@ -55636,12 +55638,14 @@ struct GameSessionManager_tC5CBFB662728157A3B4B1BF8873F868EB34931CD  : public Mo
 	EnemiesManager_tFC5ED0200D5AEFE8E5B72F7380BF068B3141164B* ___enemiesManager_4;
 	// UnityEngine.GameObject GameSessionManager::playerObject
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playerObject_5;
+	// UnityEngine.InputSystem.PlayerInput GameSessionManager::playerInput
+	PlayerInput_t5155B6508FE1937D9B2380CBA545FABE36A6F81F* ___playerInput_6;
 	// Player GameSessionManager::player
-	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___player_6;
+	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___player_7;
 	// System.Boolean GameSessionManager::gameSessionRunning
-	bool ___gameSessionRunning_7;
+	bool ___gameSessionRunning_8;
 	// System.Boolean GameSessionManager::gameStarted
-	bool ___gameStarted_8;
+	bool ___gameStarted_9;
 };
 
 // UnityEngine.InputSystem.GravitySensor
@@ -56010,8 +56014,8 @@ struct Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74  : public MonoBehaviour_
 	Health_t1ED9B3565743C4664CA097759AFE6D7B6A6DF2B1* ___health_10;
 	// UnityEngine.Vector2 Player::movementInput
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___movementInput_11;
-	// UnityEngine.Vector2 Player::directionInput
-	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___directionInput_12;
+	// System.Boolean Player::isFiring
+	bool ___isFiring_12;
 	// System.Int32 Player::score
 	int32_t ___score_13;
 	// System.Single Player::invincibilityLength

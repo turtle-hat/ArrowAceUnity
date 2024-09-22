@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Slider userInterfaceHealthbar;
 
     // GAMEOBJECT COMPONENTS
-    // The component for
+    // The component for displaying the sprite
     private SpriteRenderer spriteRenderer;
     // The component for moving the Player
     private Movement movement;
@@ -25,8 +25,8 @@ public class Player : MonoBehaviour
     // INPUT
     // Moving
     private Vector2 movementInput;
-    // Aiming projectiles
-    private Vector2 directionInput;
+    // Whether the Fire button is pressed
+    private bool isFiring;
 
     // GAMEPLAY
     [HideInInspector]
@@ -59,6 +59,8 @@ public class Player : MonoBehaviour
         movement = gameObject.GetComponent<Movement>();
         collisionHandler = gameObject.GetComponent<CollisionHandler>();
         health = gameObject.GetComponent<Health>();
+
+        isFiring = false;
     }
 
     // Start is called before the first frame update
@@ -68,101 +70,122 @@ public class Player : MonoBehaviour
         collisionManager.AddToColliderSets(collisionHandler);
     }
 
+    // Called when a game starts
+    public void NewGame()
+    {
+        // Reset position, health, input, and timers
+        transform.position = new Vector3(150f, 0f, 0f);
+        health.health = 1f;
+        isFiring = false;
+        invincibilityTimer = 0f;
+        fireRecoveryTimer = 0f;
+
+        // Show sprite
+        spriteRenderer.enabled = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        // Move
-        movement.Move(movementInput);
+        // Only do anything if the game session has been started
+        if (gameSessionManager.gameSessionRunning)
+        {
+            // Move
+            movement.Move(movementInput);
 
-        // Move the Player back onscreen if it's offscreen
-        foreach (PhysicsBox phys in collisionHandler.physicsBoxes)
-        {
-            transform.position += phys.GetDistanceOffscreen();
-        }
-
-        if (invincibilityTimer > 0)
-        {
-            spriteRenderer.enabled = (int)(invincibilityTimer * 10) % 2 == 1;
-        }
-        else
-        {
-            if (!spriteRenderer.enabled && invincibilityTimer < 0)
+            // Move the Player back onscreen if it's offscreen
+            foreach (PhysicsBox phys in collisionHandler.physicsBoxes)
             {
-                spriteRenderer.enabled = true;
+                transform.position += phys.GetDistanceOffscreen();
             }
-        }
 
-        // Reset collisions and then get relevant collisions
-        collisionHandler.ResetCollisions();
-        collisionManager.CheckCollisionsOnHandler(collisionHandler);
-
-        // If it registers collisions...
-        if (collisionHandler.collisions.Count > 0)
-        {
-            // If multiple hitboxes intersect the player on this frame,
-            // this variable will only make them take damage once from the most damaging one
-            float highestDamage = 0;
-
-            for (int i = 0; i < collisionHandler.collisions.Count; i++)
+            if (invincibilityTimer > 0)
             {
-                CollisionHit hit = collisionHandler.collisions[i];
-
-                if (hit.otherBox != null && hit.otherBox is Hurtbox && hit.otherHandler.collisionClass == CollisionClass.EnemyProjectile)
+                spriteRenderer.enabled = (int)(invincibilityTimer * 10) % 2 == 1;
+            }
+            else
+            {
+                if (!spriteRenderer.enabled && invincibilityTimer < 0)
                 {
-                    currentWeapon = 1;
-                    collisionManager.RemoveFromColliderSets(hit.otherHandler);
-                    Destroy(hit.otherBox.gameObject);
+                    spriteRenderer.enabled = true;
                 }
+            }
 
-                // Collision with a hitbox on the other object
-                if (hit.otherBox != null && hit.otherBox is Hitbox)
+            // Reset collisions and then get relevant collisions
+            collisionHandler.ResetCollisions();
+            collisionManager.CheckCollisionsOnHandler(collisionHandler);
+
+            // If it registers collisions...
+            if (collisionHandler.collisions.Count > 0)
+            {
+                // If multiple hitboxes intersect the player on this frame,
+                // this variable will only make them take damage once from the most damaging one
+                float highestDamage = 0;
+
+                for (int i = 0; i < collisionHandler.collisions.Count; i++)
                 {
-                    // If not invincible, add that damage to the highest damage
-                    if (invincibilityTimer <= 0)
+                    CollisionHit hit = collisionHandler.collisions[i];
+
+                    // If the player's catch box is colliding with an enemy projectile,
+                    // set it as the player's current weapon
+                    if (hit.otherBox != null && hit.otherBox is Hurtbox && hit.otherHandler.collisionClass == CollisionClass.EnemyProjectile)
                     {
-                        highestDamage = Mathf.Max(highestDamage, ((Hitbox)hit.otherBox).damage);
+                        currentWeapon = 1;
+                        collisionManager.RemoveFromColliderSets(hit.otherHandler);
+                        Destroy(hit.otherBox.gameObject);
                     }
-                    ((Hitbox)hit.otherBox).onHit.Invoke();
+
+                    // Collision with a hitbox on the other object
+                    if (hit.otherBox != null && hit.otherBox is Hitbox)
+                    {
+                        // If not invincible, add that damage to the highest damage
+                        if (invincibilityTimer <= 0)
+                        {
+                            highestDamage = Mathf.Max(highestDamage, ((Hitbox)hit.otherBox).damage);
+                        }
+                        ((Hitbox)hit.otherBox).onHit.Invoke();
+                    }
+                }
+
+                // If the player took any damage, apply damage and add invincibility frames
+                if (highestDamage > 0)
+                {
+                    health.Hurt(highestDamage);
+                    invincibilityTimer = invincibilityLength;
                 }
             }
 
-            // If the player took any damage, apply damage and add invincibility frames
-            if (highestDamage > 0)
+            userInterfaceHealthbar.value = health.health;
+
+            // If able to fire and pressing the button to fire, Instantiate a new projectile
+            if (fireRecoveryTimer <= 0f && isFiring)
             {
-                health.Hurt(highestDamage);
-                invincibilityTimer = invincibilityLength;
-            }
-        }
+                //Debug.Log($"Blamm! Directional Input: {directionInput}");
 
-        // If able to fire and pressing a directional button to fire, Instantiate a new projectile
-        if (fireRecoveryTimer <= 0f && directionInput.x != 0f) {
-            //Debug.Log($"Blamm! Directional Input: {directionInput}");
+                Projectile newProjectile = Instantiate(projectiles[currentWeapon]).GetComponent<Projectile>();
 
-            Projectile newProjectile = Instantiate(projectiles[currentWeapon]).GetComponent<Projectile>();
+                // Set the projectile's position, direction, and acceleration/damping (which should both be 0)
+                newProjectile.SetMotion(
+                    new Vector3(
+                        transform.position.x - 24,
+                        transform.position.y,
+                        transform.position.z + 1),
+                    new Vector2(-1f, 0f),
+                    0f, 0f
+                    );
 
-            // Set the projectile's position, direction, and acceleration/damping (which should both be 0)
-            newProjectile.SetMotion(
-                new Vector3(
-                    transform.position.x + (directionInput.x * 24),
-                    transform.position.y,
-                    transform.position.z),
-                new Vector2(directionInput.x, 0f),
-                0f, 0f
-                );
+                if (currentWeapon != defaultWeapon)
+                {
+                    currentWeapon = defaultWeapon;
+                }
 
-            if (currentWeapon != defaultWeapon)
-            {
-                currentWeapon = defaultWeapon;
+                fireRecoveryTimer = fireRecoveryLength;
             }
 
-            fireRecoveryTimer = fireRecoveryLength;
+            // Adjust timers
+            invincibilityTimer -= Time.deltaTime;
+            fireRecoveryTimer -= Time.deltaTime;
         }
-
-        userInterfaceHealthbar.value = health.health;
-
-        // Adjust timers
-        invincibilityTimer -= Time.deltaTime;
-        fireRecoveryTimer -= Time.deltaTime;
     }
 
     /// <summary>
@@ -175,20 +198,17 @@ public class Player : MonoBehaviour
         movementInput = moveContext.ReadValue<Vector2>();
     }
 
-    public void OnFire(InputAction.CallbackContext directContext)
+    public void OnFire(InputAction.CallbackContext fireContext)
     {
-        // Get movement direction from input
-        directionInput = directContext.ReadValue<Vector2>();
+        isFiring = fireContext.ReadValueAsButton();
     }
 
     public void OnDeath()
     {
-        // Removes from collider sets
-        collisionManager.RemoveFromColliderSets(collisionHandler);
+        // Hide sprite
+        spriteRenderer.enabled = false;
 
         // Stop game session
         gameSessionManager.gameSessionRunning = false;
-
-        Destroy(gameObject);
     }
 }

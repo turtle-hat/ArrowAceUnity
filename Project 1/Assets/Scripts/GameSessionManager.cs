@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// Handles starting new games as well as player input
 public class GameSessionManager : MonoBehaviour
 {
     public EnemiesManager enemiesManager;
@@ -13,7 +14,7 @@ public class GameSessionManager : MonoBehaviour
     private PlayerInput playerInput;
 
     // Public reference to the current player
-    [HideInInspector]
+    //[HideInInspector]
     public Player player;
 
     [HideInInspector]
@@ -38,28 +39,28 @@ public class GameSessionManager : MonoBehaviour
     // Runs when the user starts a game
     public void OnGameStart(InputAction.CallbackContext startContext)
     {
-        gameStarted = true;
-
-        if (gameSessionRunning == true)
+        // If button is down
+        if (startContext.ReadValueAsButton())
         {
-            player.OnDeath();
+            gameStarted = true;
+
+            if (gameSessionRunning == true)
+            {
+                player.OnDeath();
+            }
+
+            // Kill current enemies
+            enemiesManager.NewGame();
+
+            // Reset score
+            Scoreboard scoreboard = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<Scoreboard>();
+            scoreboard.NewGame();
+
+            // Center player on screen and display them
+            player.NewGame();
+
+            // Start the game session
+            gameSessionRunning = true;
         }
-
-        // Kill current enemies
-        enemiesManager.NewGame();
-
-        // Reset score
-        Scoreboard scoreboard = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<Scoreboard>();
-        scoreboard.NewGame();
-
-        // Create new player in center of screen
-        Player newPlayer = Instantiate(playerObject).GetComponent<Player>();
-        newPlayer.transform.position = new Vector3(0, 0, 0);
-
-        // Get a reference to the player and start the game session
-        player = newPlayer.GetComponent<Player>();
-
-
-        gameSessionRunning = true;
     }
 }

@@ -78,34 +78,37 @@ ScriptsOnlyBuild:
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: Player
+    methodName: OnDeath
+  - assembly: Assembly-CSharp
+    fullTypeName: Player
+    methodName: OnDeath
+  - assembly: Assembly-CSharp
+    fullTypeName: Enemy
+    methodName: OnDeath
+  - assembly: Assembly-CSharp
+    fullTypeName: Enemy
+    methodName: OnHit
+  - assembly: Assembly-CSharp
+    fullTypeName: Enemy
+    methodName: OnHit
+  - assembly: Assembly-CSharp
+    fullTypeName: Enemy
+    methodName: OnDeath
+  - assembly: Assembly-CSharp
+    fullTypeName: Projectile
+    methodName: OnHit
+  - assembly: Assembly-CSharp
+    fullTypeName: Projectile
+    methodName: OnHit
+  - assembly: Assembly-CSharp
+    fullTypeName: Projectile
+    methodName: OnHit
+  - assembly: Assembly-CSharp
+    fullTypeName: Player
     methodName: OnMove
   - assembly: Assembly-CSharp
     fullTypeName: Player
     methodName: OnFire
-  - assembly: Assembly-CSharp
-    fullTypeName: Player
-    methodName: OnDeath
-  - assembly: Assembly-CSharp
-    fullTypeName: Enemy
-    methodName: OnDeath
-  - assembly: Assembly-CSharp
-    fullTypeName: Enemy
-    methodName: OnHit
-  - assembly: Assembly-CSharp
-    fullTypeName: Enemy
-    methodName: OnHit
-  - assembly: Assembly-CSharp
-    fullTypeName: Enemy
-    methodName: OnDeath
-  - assembly: Assembly-CSharp
-    fullTypeName: Projectile
-    methodName: OnHit
-  - assembly: Assembly-CSharp
-    fullTypeName: Projectile
-    methodName: OnHit
-  - assembly: Assembly-CSharp
-    fullTypeName: Projectile
-    methodName: OnHit
   - assembly: Assembly-CSharp
     fullTypeName: GameSessionManager
     methodName: OnGameStart
@@ -128,53 +131,53 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1600}
+      Script: {instanceID: 1602}
     - Class: 114
-      Script: {instanceID: 1604}
+      Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 3184}
+      Script: {instanceID: 3186}
     - Class: 114
-      Script: {instanceID: 3214}
+      Script: {instanceID: 3216}
     - Class: 114
-      Script: {instanceID: 3534}
+      Script: {instanceID: 3536}
     - Class: 114
-      Script: {instanceID: 3994}
+      Script: {instanceID: 3996}
     - Class: 114
-      Script: {instanceID: 4110}
+      Script: {instanceID: 4112}
     - Class: 114
-      Script: {instanceID: 4278}
+      Script: {instanceID: 4280}
     - Class: 114
-      Script: {instanceID: 4450}
+      Script: {instanceID: 4452}
     - Class: 114
-      Script: {instanceID: 4538}
+      Script: {instanceID: 4540}
     - Class: 114
-      Script: {instanceID: 5246}
+      Script: {instanceID: 5248}
     - Class: 114
-      Script: {instanceID: 5336}
+      Script: {instanceID: 5338}
     - Class: 114
-      Script: {instanceID: 5926}
+      Script: {instanceID: 5928}
     - Class: 114
-      Script: {instanceID: 5976}
+      Script: {instanceID: 5978}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 6058}
     - Class: 114
-      Script: {instanceID: 6246}
+      Script: {instanceID: 6248}
     - Class: 114
-      Script: {instanceID: 6730}
+      Script: {instanceID: 6732}
     - Class: 114
-      Script: {instanceID: 7150}
+      Script: {instanceID: 7152}
     - Class: 114
-      Script: {instanceID: 8094}
+      Script: {instanceID: 8096}
     - Class: 114
-      Script: {instanceID: 8444}
+      Script: {instanceID: 8446}
     - Class: 114
-      Script: {instanceID: 8634}
+      Script: {instanceID: 8636}
     - Class: 114
-      Script: {instanceID: 9666}
+      Script: {instanceID: 9668}
     - Class: 114
-      Script: {instanceID: 10062}
+      Script: {instanceID: 10064}
     - Class: 114
-      Script: {instanceID: 10384}
+      Script: {instanceID: 10386}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
